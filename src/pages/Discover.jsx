@@ -1,14 +1,11 @@
 /* eslint-disable */
 import React from 'react';
-
 import { useDispatch, useSelector } from 'react-redux';
 import { Error, Loader, SongCard } from '../components';
 import { genres } from '../assets/constants';
 
 const Discover = () => {
-    const dispatch = useDispatch();
     const { genreListId } = useSelector((state) => state.player);
-    const { activeSong, isPlaying } = useSelector((state) => state.player);
     const { data, isFetching, error } = useGetSongsByGenreQuery(genreListId || 'POP');
 
     if (isFetching) {

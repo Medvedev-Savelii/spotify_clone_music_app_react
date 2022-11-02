@@ -5,7 +5,7 @@ export const shazamCoreApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://shazam-core.p.rapidapi.com/v1',
     prepareHeaders: (headers) => {
-      headers.set('X-RapidAPI-Key', import.meta.env.VITE_SHAZAM_CORE_RAPID_API_KEY);
+      headers.set('X-RapidAPI-Key', '7900f8c7a8mshc6370e75650eabap155cffjsn17b6279cb856');
 
       return headers;
     },
@@ -30,17 +30,3 @@ export const {
   useGetSongDetailsQuery,
   useGetSongRelatedQuery,
 } = shazamCoreApi;
-
-
-const options = {
-  method: 'GET',
-  headers: {
-    'X-RapidAPI-Key': '7900f8c7a8mshc6370e75650eabap155cffjsn17b6279cb856',
-    'X-RapidAPI-Host': ''
-  }
-};
-
-fetch('https://shazam-core.p.rapidapi.com/v1/charts/world', options)
-  .then(response => response.json())
-  .then(response => console.log(response))
-  .catch(err => console.error(err));
